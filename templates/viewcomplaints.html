@@ -1,0 +1,40 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewcomplaints_search#about">
+  <table width="378" border="1"class="table table-striped">
+    <tr>
+      <td colspan="2"><div align="center">
+        <blockquote>
+          <p>Date</p>
+        </blockquote>
+      </div></td>
+      <td width="144"><label>
+        <input type="date" name="textfield" required value="{{ name }}" />
+      </label></td>
+      <td width="99"><label>
+        <input type="submit" name="Submit" value="Search"class="btn btn-primary"/>
+      </label></td>
+    </tr>
+    <tr class=" table table-dark">
+      <td width = "34">Id</td>
+      <td width="34">User</td>
+      <td width="73">Complaints</td>
+      <td>Date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td> {{ i.id }}</td>
+      <td>&nbsp;{{ i.user.fname }} {{ i.user.lname }}</td>
+      <td>{{ i.Complaints }}</td>
+      <td>{{ i.date }}</td>
+        {% if i.reply == 'waiting' %}
+      <td><div align="center"><a href="sendreply/{{ i.id }}">Send Reply</a></div></td>
+    {% else %}
+    <td>{{ i.reply }}</td>{% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+  <div align="justify"></div>
+</form>
+{% endblock %}

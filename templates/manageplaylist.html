@@ -1,0 +1,45 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="manageplaylist_search#about" >
+  <table width="200" border="1"class="table table-striped">
+    <tr>
+      <td colspan="5">&nbsp;</td>
+      <td><label>
+        <input type="text" name="textfield" required value="{{ name }}"/>
+      </label></td>
+      <td><label>
+        <input type="submit" name="Submit" value="Search"class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr class=" table table-dark">
+      <td>Song</td>
+      <td>Genre</td>
+      <td>Musician</td>
+      <td>Details</td>
+      <td>File</td>
+      <td>Emotion</td>
+        <td></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.song }}</td>
+      <td>{{ i.genre }}</td>
+      <td>{{ i.musician }}</td>
+      <td>{{ i.details }}</td>
+      <td><audio controls>
+        <source src="{{ i.file.url }}" type="audio/mpeg">
+        
+      </audio>
+      </td>
+        <!-- <td ><img src="{{ i.file.url }}" width="100" height="100" alt=""/></td> -->
+        <td>{{ i.emotion }}</td>
+      <td><div align="center">
+        <p><a href="editplaylist/{{ i.id }}"class="btn btn-primary">Edit</a><br>
+            <a href="deleteplaylist/{{ i.id }}"  class="btn btn-primary">Delete</a></p>
+        </div></td>
+    </tr>
+      {% endfor %}
+      <tr><td align="center" colspan="6"><a href="/addplaylist">Add New</a></td>
+  </table>
+</form>
+{% endblock %}

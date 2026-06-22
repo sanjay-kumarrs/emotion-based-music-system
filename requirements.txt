@@ -1,0 +1,7 @@
+Django>=3.2.0,<4.0.0
+PyMySQL
+opencv-python
+numpy
+scipy
+tensorflow
+keras

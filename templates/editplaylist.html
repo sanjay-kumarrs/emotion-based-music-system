@@ -1,0 +1,51 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="/editplylistcode">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <td width="85"><div align="right">Song</div></td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield"  required pattern="[A-Z a-z.]{3,25}" value="{{ val.song }}" />
+      </label></td>
+    </tr>
+    <tr >
+      <td><div align="right">Genre</div></td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield2" required value="{{ val.genre }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right">Musician</div></td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield3" required value="{{ val.musician }}"/>
+      </label></td>
+    </tr>
+	<tr>
+      <td><div align="right">Emotion</div></td>
+      <td colspan="2"><label>
+        <input type="text" name="textfield4" required value="{{ val.emotion }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="right">File</div></td>
+      <td width="19">
+        <input type="file" name="file" value="{{ val.file }}" />
+      </td>
+    </tr>
+    <tr>
+      <td><div align="right">Details</div></td>
+      <td colspan="2"><label>
+          <textarea name="textarea">{{ val.details }}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="3"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Edit" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+  <label></label>
+</form>
+{% endblock %}

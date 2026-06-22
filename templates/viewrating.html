@@ -1,0 +1,33 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewrating_search#about">
+  <table width="200" border="1"class="table table-striped">
+    <tr>
+      <td colspan="2"><div align="right">Date</div></td>
+      <td><label>
+      <input type="date" name="textfield" required value="{{ name }}" />
+      </label></td>
+      <td><label> </label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Search" class="btn btn-primary"/>
+        </div></td>
+    </tr>
+    <tr class=" table table-dark">
+      <td>Id</td>
+      <td>User</td>
+      <td>Feedback</td>
+      <td>Rating</td>
+      <td>Date</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.id }}</td>
+      <td>&nbsp;{{ i.user.fname }} {{ i.user.lname }}</td>
+      <td>&nbsp;{{ i.feedback }}</td>
+      <td>&nbsp;{{ i.rating }}</td>
+      <td>{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

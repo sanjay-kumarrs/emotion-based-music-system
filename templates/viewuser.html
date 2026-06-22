@@ -1,0 +1,38 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="viewusersrch#about">
+  <table width="200" border="1"class="table table-striped">
+    <tr>
+      <td colspan="3">&nbsp;</td>
+      <td><label>
+        <input type="text" name="textfield" required value="{{ name }}" />
+      </label></td>
+      <td><label>
+        
+        <div align="left">
+          <input type="submit" name="Submit" value="search" class="btn btn-primary"/>
+        </div>
+      </label></td>
+    </tr>
+    <tr class="table table-dark">
+      <td>Id</td>
+      <td>Name</td>
+      <td>Gender</td>
+      <td>Address</td>
+      <td>Phone</td>
+      <td>Email</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.id }}</td>
+      <td>{{ i.fname }} {{ i.lname }}</td>
+      <td>{{ i.gender }}</td>
+      <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}</td>
+      <td>{{ i.phone }}</td>
+      <td>{{ i.email }}</td>
+      <td><a href="/delete_user/{{i.LOGIN_id}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

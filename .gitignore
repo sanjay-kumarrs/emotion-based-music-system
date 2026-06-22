@@ -1,0 +1,61 @@
+# Explicitly requested by the user
+README.md
+readme.md
+myfile.txt
+
+# Pictures / Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+*.dia
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static/assets/
+
+# Virtual Environment
+venv/
+venv_old/
+env/
+ENV/
+ENV/local/
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+Thumbs.db
+Desktop.ini
